@@ -1,5 +1,7 @@
 Function.prototype.myCall = function(context){
-
+    if(typeof this !== 'function' ){
+      throw new TypeError("the caller is not a function")
+    }
     let parameters = Array.from(arguments).slice(1)
     // 变量不使用点选择法用方括号选择法
     const fn = Symbol("function property")

@@ -1,7 +1,6 @@
 function myNew(Fn, array) {
   if(typeof Fn !== "function"){
-    console.log("the type of Fn is not function")
-    return 
+    throw new TypeError("the first parameters is not a function")
   }
   let result = {}
   // 原型指向
