@@ -1,8 +1,13 @@
 Function.prototype.myCall = function(context){
   // parameters 取从一到结束的参数
+    // let parameters = Array.from(arguments).slice(1)
+    // context.fn = this
+    // context.fn(...parameters)
     let parameters = Array.from(arguments).slice(1)
-    context.fn = this
-    context.fn(...parameters)
+    // 变量不使用点选择法用方括号选择法
+    const fn=Symbol("function property")
+    context[fn] = this
+    context[fn](...parameters)
     delete context.fn
 }
 
