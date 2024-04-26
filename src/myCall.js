@@ -1,6 +1,8 @@
 Function.prototype.myCall = function(context){
+  // parameters 取从一到结束的参数
+    let parameters = Array.from(arguments).slice(1)
     context.fn = this
-    context.fn()
+    context.fn(...parameters)
     delete context.fn
 }
 
@@ -17,4 +19,4 @@ let fn2 = function (a,b){
 }
 
 fn1.myCall(person)
-// fn2.myCall(person,'1','2')
+fn2.myCall(person,'1','2')
