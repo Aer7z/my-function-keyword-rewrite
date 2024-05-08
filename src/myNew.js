@@ -24,4 +24,4 @@ let person = [
 let obj = myNew(Person, person[0])
 console.log(JSON.stringify(obj))
 // 测试构造函数类型不为函数是否可以检测出来
-myNew(person, person[0])
+// myNew(person, person[0])

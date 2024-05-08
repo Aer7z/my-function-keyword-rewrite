@@ -1,12 +1,11 @@
-Function.prototype.myCall = function(context){
+Function.prototype.myCall = function(context,...prams){
     if(typeof this !== 'function' ){
       throw new TypeError("the caller is not a function")
     }
-    let parameters = Array.from(arguments).slice(1)
     // 变量不使用点选择法用方括号选择法
     const fn = Symbol("function property")
     context[fn] = this
-    context[fn](...parameters)
+    context[fn](...prams)
     delete context[fn]
 }
 
