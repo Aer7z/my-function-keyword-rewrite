@@ -1,4 +1,5 @@
 function myNew(Fn, array) {
+  'use strict'
   if(typeof Fn !== "function"){
     throw new TypeError("the first parameters is not a function")
   }

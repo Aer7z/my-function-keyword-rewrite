@@ -1,10 +1,14 @@
-Function.prototype.myApply = function(context,pramsArray=[]){
+Function.prototype.myApply = function(context,pramsArray){
   //没有默认值的参数是undefined，无法展开
   //所以这里给了一个默认值
+  'use strict'
   if(typeof this !== 'function' ){
     throw new TypeError("the caller is not a function")
   }
   // 变量不使用点选择法用方括号选择法
+  if(pramsArray===undefined){
+    pramsArray=[]
+  }
   const fn = Symbol("function property")
   // 这里的this是调用myApply的函数
   context[fn] = this
